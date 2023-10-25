@@ -55,13 +55,17 @@
 
         <section class="page" id="register">
             <h2>Register</h2>
-            <form id="formRegister">
+            <form id="formRegister" onsubmit="Auth.register(event)">
                 <fieldset>
-                    <input placeholder="You Name" id="register_name" required>
-                    <input placeholder="Your email" id="register_email" required type="email">
+                    <legend>Register</legend>
+                    <label for="register_name">Your Name</label>
+                    <input id="register_name" required autocomplete="username">
+                    <label for="register_email">Your Email</label>
 
-                    <label>Your Password</label>
-                    <input type="password" id="register_password" required>
+                    <input id="register_email" required type="email" autocomplete="email">
+
+                    <label for="register_password">Your Password</label>
+                    <input type="password" id="register_password" required autocomplete="new-password">
                 </fieldset>
 
                 <button>Register Account</button>
@@ -71,9 +75,13 @@
         <section class="page" id="login">
             <h2>Log In</h2>
 
-            <form id="formLogin">
+            <form id="formLogin" onsubmit="Auth.login(event)">
                 <fieldset>
-                    <input placeholder="email" id="login_email" required>
+                    <legend>Log In</legend>
+
+
+                    <label for="login_email">Email</label>
+                    <input placeholder="email" id="login_email" required autocomplete="username">
                     <label for="login_password">Password</label>
                     <input type="password" id="login_password">
                 </fieldset>
